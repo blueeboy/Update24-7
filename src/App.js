@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
@@ -14,7 +14,7 @@ import kids_banner from './Components/Assets/bannerKids1.jpg'
 function App() {
   return (
     <div>
-        <BrowserRouter>
+        <Router>
           <Navbar />
           <Routes>
             <Route path="/" element={<Shop />} />
@@ -27,7 +27,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </Router>
         
     </div>
   );
