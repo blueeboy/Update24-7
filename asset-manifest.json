@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Update24-7/static/css/main.4fc2f4ba.css",
+    "main.js": "/Update24-7/static/js/main.4ad81f21.js",
+    "static/js/453.8ab44547.chunk.js": "/Update24-7/static/js/453.8ab44547.chunk.js",
+    "static/media/hero1.jpg": "/Update24-7/static/media/hero1.96363e9f08817a439ea8.jpg",
+    "static/media/bannerWomen1.jpg": "/Update24-7/static/media/bannerWomen1.1a5e5e9a6e86d7340883.jpg",
+    "static/media/bannerKids1.jpg": "/Update24-7/static/media/bannerKids1.8123711429f8b798f13a.jpg",
+    "static/media/bannerMen1.jpg": "/Update24-7/static/media/bannerMen1.7ca4aa2942c141d8d60f.jpg",
+    "static/media/hero2.jpg": "/Update24-7/static/media/hero2.a0a448260da7655fc1aa.jpg",
+    "static/media/p10_img.jpg": "/Update24-7/static/media/p10_img.0b45d95afcec2ce518d7.jpg",
+    "static/media/p6_img.jpg": "/Update24-7/static/media/p6_img.813235dd04b86601fc7f.jpg",
+    "static/media/p5_img.jpg": "/Update24-7/static/media/p5_img.acd8857656031cc1aed2.jpg",
+    "static/media/p4_img.jpg": "/Update24-7/static/media/p4_img.93854c0ac3e1aa1c9e81.jpg",
+    "static/media/p3_img.jpg": "/Update24-7/static/media/p3_img.d91db14e3d03a4e8ec9c.jpg",
+    "static/media/p9_img.jpg": "/Update24-7/static/media/p9_img.5c05c40c2c78b100d498.jpg",
+    "static/media/p1_img.jpg": "/Update24-7/static/media/p1_img.8e0dfe56cedc704c7f3f.jpg",
+    "static/media/p8_img.jpg": "/Update24-7/static/media/p8_img.f0604ab6293da2ea3216.jpg",
+    "static/media/p2_img.jpg": "/Update24-7/static/media/p2_img.e7bd21663d6aee5e517b.jpg",
+    "static/media/p7_img.jpg": "/Update24-7/static/media/p7_img.462b236fd3e0131539b3.jpg",
+    "index.html": "/Update24-7/index.html",
+    "main.4fc2f4ba.css.map": "/Update24-7/static/css/main.4fc2f4ba.css.map",
+    "main.4ad81f21.js.map": "/Update24-7/static/js/main.4ad81f21.js.map",
+    "453.8ab44547.chunk.js.map": "/Update24-7/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4fc2f4ba.css",
+    "static/js/main.4ad81f21.js"
+  ]
+}
