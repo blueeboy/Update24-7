@@ -1,7 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext";
 
 const ProceedToCheckout = ({ cartId, adminPhoneNumber }) => {
+  const { cartItems } = useContext(ShopContext);
   const handleCheckout = () => {
+
+   // Convert cart items to a JSON string and encode it for URL
+  const encodedCart = encodeURIComponent(JSON.stringify(cartItems));
     // Generate checkout link
     const checkoutLink = `https://blueeboy.github.io/Update24-7/#/Cart?cartId=${cartId}`;
     
