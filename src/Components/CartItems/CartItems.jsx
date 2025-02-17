@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext';
 import remove_icon from '../Assets/cancel.png'
@@ -8,12 +8,20 @@ const CartItems = () => {
 
 const {getTotalCartAmount,all_products,cartItems,removeFromCart} = useContext(ShopContext);
 
-  // Generate a unique cart ID (You can use user ID or session ID for real implementation)
-  const cartId = "cart_" + new Date().getTime(); // Example: cart_1700000000000
+  
   const adminPhoneNumber = "+2349037239967"; // Replace with the actual admin's WhatsApp number
 
 
+    const [cartId, setCartId] = useState("");
 
+    useEffect(() => {
+        let storedCartId = sessionStorage.getItem("cartId");
+        if (!storedCartId) {
+          storedCartId = "cart_" + Math.random().toString(36).substring(2, 9);
+          sessionStorage.setItem("cartId", storedCartId);
+        }
+        setCartId(storedCartId);
+    }, []);
 
   return (
     <div className='cartitems'>
