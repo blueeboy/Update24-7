@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em;
+    box-shadow: 0 1px 3px -2px black;
+}
+
+.nav-logo h1{
+    font-size: 30px;
+}
+
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    font-size: 20px;
+    font-weight: 500;
+    color: #626262;
+}
+
+.nav-menu ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-menu hr {
+    background-color: red;
+    height: 3px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 0;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ccc;
+    padding: 0 2.5em; 
+}
+
+.search-container .search {
+    position: absolute;
+    left: 0.7em;
+    top: 0.8em;
+}
+.search-container .cancel {
+    position: absolute;
+    left: 10.7em;
+    top: 0.8em;
+}
+
+.nav-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-cart img {
+    width: 25px;
+    margin-top: 10px;
+}
+
+.nav-cart-count {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -10px;
+    border-radius: 11px;
+    font-size: 12px;
+    background-color: red;
+    color: #fff;
+}
