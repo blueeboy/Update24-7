@@ -3,7 +3,7 @@ import React from "react";
 const ProceedToCheckout = ({ cartId, adminPhoneNumber }) => {
   const handleCheckout = () => {
     // Generate checkout link
-    const checkoutLink = `https://blueeboy.github.io/Cart?cartId=${cartId}`;
+    const checkoutLink = `https://blueeboy.github.io/Update24-7/Cart?cartId=${cartId}`;
     
     // Encode message for WhatsApp
     const message = encodeURIComponent(`Hello, I want to place an order. Click here to view my cart: ${checkoutLink}`);
