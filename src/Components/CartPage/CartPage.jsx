@@ -9,7 +9,7 @@ const CartPage = () => {
   const cartId = queryParams.get("cartId");
   const cartData = queryParams.get("cart"); // Encoded cart data
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState({});
 
   useEffect(() => {
     if (cartData) {
@@ -27,12 +27,12 @@ const CartPage = () => {
       <h1>Admin Cart View</h1>
       <p>Cart ID: {cartId}</p>
 
-      {cartItems.length > 0 ? (
+      {Object.keys(cartItems).length > 0 ? (
         <ul>
-          {Object.keys(cartItems).map((key) => (
-            <li key={key}>
-              <p>Product ID: {key}</p>
-              <p>Quantity: {cartItems[key]}</p>
+          {Object.entries(cartItems).map(([productId, quantity]) => (
+            <li key={productId}>
+              <p>Product ID: {productId}</p>
+              <p>Quantity: {quantity}</p>
             </li>
           ))}
         </ul>

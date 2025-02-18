@@ -48,7 +48,7 @@ const {getTotalCartAmount,all_products,cartItems,removeFromCart} = useContext(Sh
                             </div>
                             <hr/>
                         </div>
-            }
+            };
             return null;
         })}
         <div className='cartitems-down'>
