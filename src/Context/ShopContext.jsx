@@ -4,11 +4,11 @@ import all_products from '../Components/Assets/all_products'
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = ()=> {
+const getDefaultCart = () => {
     let cart = {};
-    for (let index = 1; index <= all_products.length; index++) { // Start from 1
-        cart[index] = 0;
-    }
+    all_products.forEach(product => {
+        cart[product.id] = 0; // Initialize cart using product IDs
+    });
     return cart;
 }
 
@@ -18,28 +18,24 @@ const ShopContextProvider = (props) => {
     
     
     const addToCart = (itemId)=> {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1})) 
+        setCartItems((prev)=>({
+            ...prev,
+            [itemId]: prev[itemId]+1
+        })); 
     } 
    
-    const removeFromCart = (itemId)=> {
-        if (cartItems[itemId] > 0) {
-            setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-        }
+    const removeFromCart = (itemId) => {
+        setCartItems((prev) => ({
+            ...prev,
+            [itemId]: Math.max(prev[itemId] - 1, 0) // Prevent negative values
+        }));
     } 
 
     const getTotalCartAmount = () => {
-        let totalAmount = 0;
-        for(const item in cartItems)
-        {
-            if(cartItems[item]>0)
-            {
-                let itemInfo = all_products.find(product=>product.id===Number(item))
-                if (itemInfo) {
-                    totalAmount += itemInfo.new_price * cartItems[item];
-                }
-            }  
-        }
-        return totalAmount;
+        return Object.entries(cartItems).reduce((total, [id, quantity]) => {
+            const itemInfo = all_products.find(product => product.id === Number(id));
+            return itemInfo ? total + itemInfo.new_price * quantity : total;
+        }, 0);
     }
 
     const getTotalCartItems = () => {

@@ -16,7 +16,7 @@ const CartPage = () => {
 
 
   useEffect(() => {
-    if (cartData) {
+    if (cartData && all_products.length > 0) {
       try {
         const parsedCart = JSON.parse(decodeURIComponent(cartData));
         setCartItems(parsedCart);
@@ -24,7 +24,7 @@ const CartPage = () => {
          // Map cart items to product details
          const selectedProducts = all_products
          .filter(product => parsedCart[product.id] > 0) // Only include selected products
-         .map(product => ({
+         .map((product) => ({
            ...product,
            quantity: parsedCart[product.id], // Add quantity from cart
          }));

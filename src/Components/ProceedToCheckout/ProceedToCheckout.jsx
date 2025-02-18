@@ -4,6 +4,7 @@ import { ShopContext } from "../../Context/ShopContext";
 
 const ProceedToCheckout = ({ cartId, adminPhoneNumber }) => {
   const { cartItems } = useContext(ShopContext);
+
   const handleCheckout = () => {
 
     const filteredCart = Object.fromEntries(
@@ -11,7 +12,7 @@ const ProceedToCheckout = ({ cartId, adminPhoneNumber }) => {
     );
     
    // Convert cart items to a JSON string and encode it for URL
-  const encodedCart = encodeURIComponent(JSON.stringify(cartItems));
+  const encodedCart = encodeURIComponent(JSON.stringify(filteredCart));
     // Generate checkout link
     const checkoutLink = `https://blueeboy.github.io/Update24-7/#/Cart?cartId=${cartId}&cart=${encodedCart}`;
     
