@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import all_products from '../Components/Assets/all_products'
 
 
@@ -6,9 +6,9 @@ export const ShopContext = createContext(null);
 
 const getDefaultCart = ()=> {
     let cart = {};
-    for (let index = 0; index < all_products.length+1; index++) {
-        cart[index] = 0;
-    }
+    all_products.forEach(product => {
+        cart[product.id] = 0;  // Ensure only valid product IDs are initialized
+    });
     return cart;
 }
 
@@ -18,12 +18,13 @@ const ShopContextProvider = (props) => {
     
     
     const addToCart = (itemId)=> {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        console.log(cartItems)
+        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1})) 
     } 
    
     const removeFromCart = (itemId)=> {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        if (cartItems[itemId] > 0) {
+            setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        }
     } 
 
     const getTotalCartAmount = () => {
@@ -32,24 +33,22 @@ const ShopContextProvider = (props) => {
         {
             if(cartItems[item]>0)
             {
-                let itemInfo = all_products.find((product)=>product.id===Number(item))
-                totalAmount += itemInfo.new_price * cartItems[item];
+                let itemInfo = all_products.find(product=>product.id===Number(item))
+                if (itemInfo) {
+                    totalAmount += itemInfo.new_price * cartItems[item];
+                }
             }  
         }
         return totalAmount;
     }
 
-    const getTotalCartItems = ()=>{
-        let totalItem = 0;
-        for(const item in cartItems)
-        {
-            if(cartItems[item]>0)
-            {
-                totalItem+= cartItems[item];
-            }
-        }
-        return totalItem;
-    }
+    const getTotalCartItems = () => {
+        return Object.values(cartItems).reduce((total, quantity) => total + quantity, 0);
+    };
+
+    useEffect(() => {
+        console.log("Updated Cart Items:", cartItems);
+    }, [cartItems]);
 
     
   

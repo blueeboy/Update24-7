@@ -6,6 +6,10 @@ const ProceedToCheckout = ({ cartId, adminPhoneNumber }) => {
   const { cartItems } = useContext(ShopContext);
   const handleCheckout = () => {
 
+    const filteredCart = Object.fromEntries(
+      Object.entries(cartItems).filter(([_, quantity]) => quantity > 0)
+    );
+    
    // Convert cart items to a JSON string and encode it for URL
   const encodedCart = encodeURIComponent(JSON.stringify(cartItems));
     // Generate checkout link

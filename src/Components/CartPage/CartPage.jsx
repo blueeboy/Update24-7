@@ -33,6 +33,11 @@ const CartPage = () => {
             <li key={productId}>
               <p>Product ID: {productId}</p>
               <p>Quantity: {quantity}</p>
+
+                
+
+
+
             </li>
           ))}
         </ul>
