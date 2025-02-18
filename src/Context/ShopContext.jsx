@@ -6,9 +6,9 @@ export const ShopContext = createContext(null);
 
 const getDefaultCart = ()=> {
     let cart = {};
-    all_products.forEach(product => {
-        cart[product.id] = 0;  // Ensure only valid product IDs are initialized
-    });
+    for (let index = 1; index <= all_products.length; index++) { // Start from 1
+        cart[index] = 0;
+    }
     return cart;
 }
 
